@@ -1,0 +1,30 @@
+First I gathered the unit system they want using a 0 or 1 because
+that is easier to deal with than characters and strings,
+followed by a easy dummy test to make sure they actually entered a 1 or 0.
+
+Next an if statement separating the next inputs based on the unit system.
+each if/elif gathers the distance and gas used, changes those numbers to
+floats so that computer math actually works, and mad the US<->metric
+conversions and stored them as separate variables. At the end of this if
+series there's a else that protects against weird things happening
+which I could not anticipate to exit to program before things get
+REALLY wrong.
+
+Then I calculated the consumption rate for each unit system and stored
+those values.
+
+Then, based on the metric consumption rate, I determined which catagory
+the rate fell under using a series of if/elifs. Again with the unknown
+cause of error else statement which should not be called upon.
+
+Then I changed all the numbers into neat strings that all take up the same
+number of characters up to a number in the tens of millions. All the
+numbers taking the same number of characters makes the next part dealing
+with the output much easier.
+
+Finally is the output, which did its best to model the spacing and
+formatting of the example on the assignment sheet. This is where the
+consistent number of characters for every number comes in handy because
+if they were not, each time a number changed number of digits the spacing
+would be completely different and it would be a mess. I also used unbreaking
+spaces between each number and its unit.
