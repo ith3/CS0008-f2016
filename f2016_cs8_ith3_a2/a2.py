@@ -55,16 +55,20 @@ def processFile(file):
 
 
 def printKV(dis, lines):
-    print("Partial # of lines  : " + formatNum(lines))
-    print("Partial distance run: " + formatNum(dis))
+    print(formatItem("Partial # of lines") + ": " + formatItem(lines))
+    print(formatItem("Partial distance run") + ": " + formatItem(dis))
+    print()
 # End printKV
 
+
 # Can be used to format any number into the defined format
-def formatNum(num):
-    if(isinstance(num, int)):
-        return "{:10}".format(num)
-    elif(isinstance(num, float)):
-        return "{:10.3f}".format(num)
+def formatItem(item):
+    if(isinstance(item, int)):
+        return "{:10}".format(item)
+    elif(isinstance(item, float)):
+        return "{:10.3f}".format(item)
+    elif(isinstance(item, str)):
+        return "{:20}".format(item)
     else:
         print("ERROR")
         quit()
@@ -78,9 +82,9 @@ def main():
     keepGoing = True
     # This while loop is the main function which asks for a file name and
     # processes the file before closing it, in addition to doing dummy tests
-    while(True):
+    while(keepGoing):
         # Getting file name
-        fileName = input("\nFile to be read     : ")
+        fileName = input(formatItem("File to be read") + ": ")
 
         # Testing if they want to quit
         if(fileName == "" or fileName == "q" or fileName == "quit"):
@@ -93,7 +97,7 @@ def main():
             try:
                 file = open(fileName, "r")
             except:
-                print("File not found.")
+                print(formatItem("File not found.\n"))
                 continue
         # Here we process the file, then close it
         dis,lines = processFile(file)
@@ -105,9 +109,9 @@ def main():
     # End while loop
 
     # Printing the final output
-    print("\nTotals")
-    print("Total # of lines    : " + formatNum(totLines))
-    print("Total distance run  : " + formatNum(totDis))
+    print("\n" + formatItem("Totals"))
+    print(formatItem("Total # of lines") + ": " + formatItem(totLines))
+    print(formatItem("Total distance run") + ": " + formatItem(totDis))
 # End Main
 
 # This kicks everything off

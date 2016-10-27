@@ -1,0 +1,17 @@
+This program prompts you to enter a "File to be read" and if that file exists
+it will go in and total  the distance ran for every line in the file which
+is formatted correctly. The output concists of the total distance ran recorded
+in that specific file, and the total number of lines that were formatted
+correctly in that file. If there is a line which does not have a name, it will
+notify the user which line does not have a name, and still include that distance
+in the summation. If the line is not formatted correctly in some other way it is
+not included in the calculation, and the program will notify the user how many
+lines in the file contain these errors and exactly where these errors are. This
+helps a lot if this program was dealing with files with many many more lines than
+just 50. The file will keep looping through this process and the user can enter
+and many files as s/he wants, until they enter "","quit", or "q" into the file
+name. At this point the program prints the total lines and distance ran throughout
+all files read and then the program ends. Also every item (except the error
+notifications)that is printed is put through a function that formats whatever
+int, float, or string passed to it in the format defined in the program
+specifications.
