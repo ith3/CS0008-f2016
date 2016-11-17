@@ -1,0 +1,35 @@
+This program works with data files of a certain format, name, distance ran
+
+on each line. You can have as many files in the folder to analize as you want.
+
+For each file to be included in the calculations, simly add the file name
+
+to the f2016_cs8_a3_data.txt file on its own line. If there is an error
+
+in the master input list and the program cannot find the file to be opened
+
+it will tell the user which file it could not find. The program then runs,
+
+telling the user if there are any errors within the data record and the line
+
+and file where the error occurs. After the program has run there will be a new
+
+output file in the samem folder as the program and data files which contains
+
+a list of all participants, followed by how many times they appeared in the
+
+records as well as the total distance they ran. Besides the output file the
+
+console will output the following information:
+
+    - Number of input files read
+
+    - Total number of lines read
+
+    - maximun distance ran by a runner along side the runner's name
+
+    - minimun distance ran by a runner along side the runner's name
+
+    - Total number of participants
+
+    - Number of participants with multiple records

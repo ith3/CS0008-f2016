@@ -10,17 +10,22 @@
 #
 # Notes:
 #
-#
+# Alex is lazy.
 #
 #######################################################
 
-# This function gets passed a file name and creates a dictionary with
-# the information inside the file, then returns that dicrionary
+# This function gets passed a file name and creates a dictionary containing
+# the information inside the file, then returns that dictionary
 def makeDict(fileName):
+
     # initializing variables and opening the file
-    file = open(fileName,"r")
     d = {}
     lineNum = 0
+    try:
+        file = open(fileName,"r")
+    except:
+        print("File " + fileName + " not found.")
+        return d,lineNum
 
     # This for loop goes through the file and fills the dictionary
     for line in file:
@@ -40,10 +45,17 @@ def makeDict(fileName):
     return d, lineNum
 # End processFile()
 
-#
+# This function takes someones name (as well as some other numbers that help
+# with finding info, and compliles all of the information about them contained
+# in the given files
 def buildProfile(name, numFiles, fileNames):
+
+    # Initializing variables
     numRecords = 0
     totRan = 0
+
+    # Finds if the name is contained in any of the files, if so retrieved
+    # info under that name and returns how many times they appear and total distance ran
     for i in range(numFiles):
         dict, lines = makeDict(fileNames[i])
         if(name in dict):
@@ -53,15 +65,18 @@ def buildProfile(name, numFiles, fileNames):
     return numRecords,totRan
 # End buildProfile
 
+# This function is for adding new names to a list, without adding names
+# already contained in said list
 def incorporate(nameList, dict):
     newNames = []
     for key in dict:
         newNames.append(key)
     newNameList = list(set(nameList + newNames))
     return newNameList
-
 # End incorporate()
 
+# This function is for formatting any numbers to be printed
+# Gets a number coming in and returns a nice neat string
 def formatNum(num):
     if(isinstance(num,int)):
         return "{:>3}".format(num)
@@ -72,9 +87,9 @@ def formatNum(num):
         quit()
 # End formatNum()
 
-# Opens the master file and stores the names of the files to open in fileNames
-# Also numFiles will = number of files - 1
+
 def main():
+    # Opens and closes the master file and stores the names of the files to open in fileNames
     master = open("f2016_cs8_a3.data.txt","r")
     fileNames = []
     numFiles = 0
@@ -83,6 +98,8 @@ def main():
         numFiles += 1
     master.close()
 
+    # This takes every file and compiles a list of all names contained in the
+    # files, with no repeats. Also counts "lines read."
     totLines = 0
     names = []
     for i in range(numFiles):
@@ -90,13 +107,16 @@ def main():
         totLines += lines
         names = incorporate(names,dict)
     names.sort()
+
+    # Initializing statistical variables that will be part of the output
     totDist = 0
     maxDist = 0
     maxDistName = ""
     minDist = 1000
     minDistName = ""
-    # Total participats = len(names)
     partsWMR = 0
+
+    # Creates and fills the output file, while creating the requested stats
     outputFile = open("Output.txt","w")
     outputFile.writelines("name, number of records, total distance ran\n")
     for name in names:
@@ -115,7 +135,7 @@ def main():
         else: () # who cares
 
     # Output
-    print("Number of Input files read   : " + formatNum(numFiles + 1))
+    print("Number of Input files read   : " + formatNum(numFiles))
     print("Total number of lines read   : " + formatNum(totLines))
     print()
     print("total distance run           : " + formatNum(totDist))
