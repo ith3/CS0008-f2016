@@ -10,43 +10,7 @@
 #
 # Notes:
 #
-#
-# Things I want:
-#
-#   - Number of Input files read (add counter at file open counter)
-#
-#   - Total number of lines read (add counter in for loop while reading lines)
-#
-#   - Max Dist run by a participant (when read new dist, if dist<maxDist: maxDist = dist)
-#
-#   - Min dist run (same as maxDist but with minimum)
-#
-#   - Total number of participants
-#
-#   - Number of participants with multiple records
-#
-#   - Output file
-#       > same format as input files but with output being
-#       > name,number of appearances,total distance ran to hundredths place
-#
-# So have the counters while opening and reading things,
-# everything else can be taken from the master list printed in the output file.
-# So make the output file as a list, print each item on a line in a file, get all
-# stats and such from the list/set/dictionary/whatever (most likely dictionary)
-# Read names off of data.txt, then send the names to processFile("fileName")
-# which will add the new info to master dictionary
-#
-#
-# What I actually need:
-#
-#   - Counters for number of files and lines read
-#
-#   - A dictionary containing: participant's name, number of appearances, total dist ran
-#
-#   - For nums, ints are 2 chars long xx, dist is 10 including ".", xxxx.xxxxx
-#
-#
-#   Cool trick, to remove duplicates, newDupFreeList = list(set(originalList))
+# Just needs comments and a push
 #
 #######################################################
 
