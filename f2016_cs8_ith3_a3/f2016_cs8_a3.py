@@ -147,7 +147,7 @@ def main():
     print()
     print("Total number of participants : " + formatNum(len(names)))
     print("Number of participants")
-    print("witn multiple records        : " + formatNum(partsWMR))
+    print("with multiple records        : " + formatNum(partsWMR))
 # End main
 
 main()
