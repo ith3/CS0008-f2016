@@ -29,9 +29,9 @@ def makeDict(fileName):
 
     # This for loop goes through the file and fills the dictionary
     for line in file:
-        lineNum += 1
         if(line == "name,distance\n"):()  # Do nothing, we don't care about that line
         else:
+            lineNum += 1
             data = line.rstrip('\n').split(',')
             data[0] = data[0].strip()
             try:
