@@ -1,0 +1,26 @@
+C:\Python35\pythonw.exe C:/Users/ihesner/Documents/CS0008/CS0008-f2016/f2016_cs8_ith3_a2/a2.py
+File to be read     : data1.csv
+Partial # of lines  :         50
+Partial distance run:   2298.967
+
+File to be read     : data2.csv
+Partial # of lines  :         50
+Partial distance run:   2195.061
+
+File to be read     : data3.csv
+File not found.
+
+File to be read     : dataE.csv
+(Line 43 does not have a name but was included in the calculation.)
+There were 3 errors in line(s) [17, 29, 38]
+(These lines were not included in the calculation.)
+Partial # of lines  :         47
+Partial distance run:   2216.583
+
+File to be read     : quit
+
+Totals
+Total # of lines    :        147
+Total distance run  :   6710.610
+
+Process finished with exit code 0
