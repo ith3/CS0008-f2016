@@ -165,10 +165,10 @@ def main():
 
     ### CHANGE TO GENERATE FROM LIST OF OBJS INSTEAD OF BUILDPROFILE
     # Creates and fills the output file, while creating the requested stats
-    outputFile = open("Output.txt","w") # use the join method
+    outputFile = open("f2016_cs8_ith3_fp.data.output.csv","w") # use the join method
     outputFile.writelines("name, number of records, total distance ran\n")
     for part in participants:
-        outputFile.writelines(participants[part].getName() + "," + str(participants[part].getDistance()) + "," + str(participants[part].getRuns()))
+        outputFile.writelines(participants[part].getName() + "," + str(participants[part].getDistance()) + "," + str(participants[part].getRuns()) + "\n")
         totDist += participants[part].getDistance()
         if(participants[part].getDistance() > maxDist):
             maxDist = participants[part].getDistance()

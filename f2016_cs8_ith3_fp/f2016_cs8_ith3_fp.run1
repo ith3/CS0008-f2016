@@ -1,0 +1,20 @@
+C:\Python35\pythonw.exe C:/Users/ihesner/Documents/CS0008/CS0008-f2016/f2016_cs8_ith3_fp/f2016_cs8_ith3_fp.py
+Master file name:whoNamesAFileThis?.txt
+    File not found.
+
+Master file name:f2016_cs8_fp.data.txt
+Number of Input files read   :   3
+Total number of lines read   : 450
+
+total distance run           : 20389.7276
+
+max distance run             : 142.7058
+  by participant             : Linn
+min distance run             :   0.0579
+  by participant             : Alex
+
+Total number of participants : 388
+Number of participants
+with multiple records        :   7
+
+Process finished with exit code 0
