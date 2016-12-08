@@ -1,0 +1,26 @@
+The main function of this program has 5 blocks:
+
+The first block prompts the user for the master input list. If the file they
+type into the console exists, it will open the file and store the file names
+contained in the master input list. If the file does not exist it tells the
+user that the file does not exist and asks for the master input list again.
+
+The second block takes each file that was stored in the master input list
+and opens it, storing all the information of the runners distances run
+in a dictionary, making use of the makeDict() function which returns the
+dictionary as well as the number of participant lines read. For each item
+in the dictionary it adds new participants to a dictionary of participant
+objects, with the key being the participants name, or if the participant
+already has an object it simply adds the distance to the existing object.
+
+The third block of text simply initializes a bunch of variables that will be
+used to gather the requested statistics.
+
+The fourth block goes through every object in our participant dictionary and
+writes the necessary info in the output file we create at the start of the block.
+Then the rest of the block gathers the stats we want for the console output.
+Finally we close the output file.
+
+The fifth block just prints the requested console output making use of the
+formatItem() function, which formats strs, ints, and floats to the requested
+parameters.
