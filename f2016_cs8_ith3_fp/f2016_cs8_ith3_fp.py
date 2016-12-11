@@ -10,7 +10,13 @@
 #
 # Notes:
 #
+#   Alex (the data point, not the TA) did not run very far.
+#   This section looks so empty with nothing.
 #
+#   Now includes people who are mentioned multiple times in a file
+#
+#   Now for loops only goes through each file once and the participant
+#   dictionary once.
 #
 #######################################################
 
@@ -101,15 +107,15 @@ def main():
                 ()  # Do nothing, we don't care about that line
             else:
                 lines += 1
-            data = line.rstrip('\n').split(',')
-            data[0] = data[0].strip()
-            try:
-                if(data[0] in participants):
-                    participants[data[0]].addDistance(float(data[1]))
-                else:
-                    participants[data[0]] = participant(data[0],float(data[1]))
-            except:
-                print("There is an error in line " + str(lines + 1) + " of " + str(fileNames[i]))
+                data = line.rstrip('\n').split(',')
+                data[0] = data[0].strip()
+                try:
+                    if(data[0] in participants):
+                        participants[data[0]].addDistance(float(data[1]))
+                    else:
+                        participants[data[0]] = participant(data[0],float(data[1]))
+                except:
+                    print("There is an error in line " + str(lines + 1) + " of " + str(fileNames[i]))
             # End for loop
         totLines += lines
         file.close()
@@ -147,6 +153,7 @@ def main():
     outputFile.close()
 
     # Output
+    print()
     print("Number of Input files read   : " + formatItem(numFiles))
     print("Total number of lines read   : " + formatItem(totLines))
     print()
