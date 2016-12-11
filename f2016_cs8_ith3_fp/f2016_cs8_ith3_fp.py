@@ -56,38 +56,6 @@ class participant():
 # End partticipant()
 
 
-# This function gets passed a file name and creates a dictionary containing
-# the information inside the file, then returns that dictionary
-def makeDict(fileName):
-
-    # initializing variables and opening the file
-    d = {}
-    lineNum = 0
-    try:
-        file = open(fileName,"r")
-    except:
-        print("File " + fileName + " not found.")
-        return d,lineNum
-
-    # This for loop goes through the file and fills the dictionary
-    for line in file:
-        if(line == "name,distance\n"):()  # Do nothing, we don't care about that line
-        else:
-            lineNum += 1
-            data = line.rstrip('\n').split(',')
-            data[0] = data[0].strip()
-            try:
-                data[1] = float(data[1])
-                d[data[0]] = data[1]
-            except:
-                print("There is an error in line " + str(lineNum) + " of " + fileName + ".")
-
-    # Closing file and returning the dictionary, as well as lines read
-    file.close()
-    return d, lineNum
-# End makeDict()
-
-
 # This function is for formatting any numbers/str to be printed
 def formatItem(itm):
     if(isinstance(itm,int)):
@@ -142,7 +110,10 @@ def main():
                     participants[data[0]] = participant(data[0],float(data[1]))
             except:
                 print("There is an error in line " + str(lines + 1) + " of " + str(fileNames[i]))
+            # End for loop
         totLines += lines
+        file.close()
+        # End for loop
 
 
 
