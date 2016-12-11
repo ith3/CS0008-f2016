@@ -6,12 +6,10 @@ contained in the master input list. If the file does not exist it tells the
 user that the file does not exist and asks for the master input list again.
 
 The second block takes each file that was stored in the master input list
-and opens it, storing all the information of the runners distances run
-in a dictionary, making use of the makeDict() function which returns the
-dictionary as well as the number of participant lines read. For each item
-in the dictionary it adds new participants to a dictionary of participant
-objects, with the key being the participants name, or if the participant
-already has an object it simply adds the distance to the existing object.
+and opens it, and goes through each line. For each line read, if the persons
+name is already in the participants dictionary, their distance is added to
+the existing object. If they are not in the dictionary, a new object is
+created and added.
 
 The third block of text simply initializes a bunch of variables that will be
 used to gather the requested statistics.

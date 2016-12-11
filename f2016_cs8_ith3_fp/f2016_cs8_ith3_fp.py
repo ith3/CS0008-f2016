@@ -126,13 +126,24 @@ def main():
     totLines = 0
     participants = {}
     for i in range(numFiles):
-        dict, lines = makeDict(fileNames[i])
-        totLines += lines
-        for key in dict:
-            if(key in participants):
-                participants[key].addDistance(dict[key])
+        file = open(fileNames[i],"r")
+        lines = 0
+        for line in file:
+            if (line == "name,distance\n"):
+                ()  # Do nothing, we don't care about that line
             else:
-                participants[key] = participant(key,dict[key])
+                lines += 1
+            data = line.rstrip('\n').split(',')
+            data[0] = data[0].strip()
+            try:
+                if(data[0] in participants):
+                    participants[data[0]].addDistance(float(data[1]))
+                else:
+                    participants[data[0]] = participant(data[0],float(data[1]))
+            except:
+                print("There is an error in line " + str(lines + 1) + " of " + str(fileNames[i]))
+        totLines += lines
+
 
 
     # Initializing statistical variables that will be part of the statistical output
